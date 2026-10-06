@@ -57,7 +57,7 @@ animation:fall 2.8s linear forwards;opacity:.9}
 <div class="scene">
   <div class="sun-glow"></div>
   <div class="card" id="card">
-    <div class="kicker">Para vos 👀</div>
+    <div class="kicker">Para Valeria, alias: Cachetes 👀</div>
     <h1>¿Vamos a ver el atardecer?</h1>
     <p>Mañana. Tú y yo.</p>
     <div class="time">🌅 4:00 PM</div>
@@ -79,8 +79,8 @@ let noClicks=0;
 
 const texts=[
   "¿Segura? 👀",
-  "Piénsalo otra vez jajaja",
-  "No te creo 😌",
+  "Piénselo otra vez jajaja",
+  "No lee creo 😌",
   "Última oportunidad...",
   "Ese botón ya se está rindiendo 😂"
 ];
@@ -94,7 +94,7 @@ no.addEventListener('click',()=>{
   if(noClicks>=5){
     no.style.opacity="0.15";
     no.style.pointerEvents="none";
-    msg.textContent="Bueno... creo que el universo quiere que digas que sí 😂";
+    msg.textContent="Bueno... creo que el universo y las buenas vibras quiere que digas que sí, ni modo 😂";
   }
 });
 
@@ -104,7 +104,7 @@ yes.addEventListener('click',()=>{
   card.querySelector('.kicker').textContent="Plan confirmado ✅";
   card.querySelector('h1').textContent="Entonces nos vemos mañana";
   card.querySelector('p').textContent="Mañana a las 4:00 PM. Paso por ti.";
-  card.querySelector('.time').textContent="🌅 Mañana · 4:00 PM · Paso por ti";
+  card.querySelector('.time').textContent="🌅 Mañana · 4:00 PM · Paso por ti, no se ponga tan guapa, que luego deja en erguenza el atardecer";
   msg.textContent="";
   for(let i=0;i<55;i++){
     const el=document.createElement('i');
