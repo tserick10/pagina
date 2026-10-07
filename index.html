@@ -2,118 +2,793 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Una pregunta 🌅</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Valeria 🌅</title>
+
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
-body{overflow:hidden;background:#120d1a;color:white}
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:#120d1a;
+    color:white;
+}
+
+/* =========================
+   FONDO ATARDECER
+========================= */
+
 .scene{
-  position:relative;width:100%;height:100dvh;
-  display:flex;align-items:center;justify-content:center;
-  background:#1a1020 url("atardecer.png") center/cover no-repeat;
+    position:relative;
+    width:100%;
+    height:100dvh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        url("atardecer.png")
+        center/cover
+        no-repeat;
 }
-.scene:before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(9,8,20,.28),rgba(10,5,12,.38));
+
+.scene::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(10,8,25,.28),
+            rgba(10,5,15,.42)
+        );
 }
+
+/* brillo del sol */
+
 .sun-glow{
-  position:absolute;width:180px;height:180px;border-radius:50%;
-  right:8%;bottom:23%;background:rgba(255,184,65,.22);
-  filter:blur(28px);animation:pulse 4s ease-in-out infinite;
+    position:absolute;
+
+    width:200px;
+    height:200px;
+
+    border-radius:50%;
+
+    right:5%;
+    bottom:20%;
+
+    background:rgba(255,180,60,.25);
+
+    filter:blur(35px);
+
+    animation:pulse 4s ease-in-out infinite;
 }
+
+/* =========================
+   TARJETA
+========================= */
+
 .card{
-  position:relative;z-index:2;width:min(88%,430px);padding:34px 25px 28px;
-  text-align:center;border:1px solid rgba(255,255,255,.2);
-  border-radius:28px;background:rgba(15,10,20,.35);
-  backdrop-filter:blur(9px);box-shadow:0 20px 70px rgba(0,0,0,.35);
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(90%,440px);
+
+    padding:30px 24px;
+
+    text-align:center;
+
+    border-radius:28px;
+
+    background:rgba(15,10,20,.35);
+
+    border:1px solid rgba(255,255,255,.20);
+
+    backdrop-filter:blur(9px);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.40);
 }
-.kicker{font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
-h1{font-size:clamp(2rem,9vw,3.2rem);line-height:1.05;margin:10px 0 14px}
-p{font-size:1.1rem;margin:8px 0;opacity:.92}
-.time{display:inline-block;margin:12px 0 22px;padding:8px 14px;border-radius:999px;
-background:rgba(255,177,73,.18);border:1px solid rgba(255,210,130,.35);font-weight:700}
-.buttons{display:flex;gap:12px;justify-content:center;align-items:center;min-height:64px}
+
+/* =========================
+   TEXTO
+========================= */
+
+.kicker{
+
+    font-size:.95rem;
+
+    letter-spacing:.08em;
+
+    text-transform:none;
+
+    opacity:.9;
+
+    margin-bottom:10px;
+}
+
+h1{
+
+    font-size:clamp(
+        2rem,
+        8vw,
+        3.2rem
+    );
+
+    line-height:1.05;
+
+    margin:10px 0 14px;
+}
+
+p{
+
+    font-size:1.08rem;
+
+    margin:8px 0;
+
+    opacity:.93;
+}
+
+/* =========================
+   FECHA
+========================= */
+
+.info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin:18px 0 22px;
+}
+
+.time{
+
+    display:inline-block;
+
+    padding:9px 15px;
+
+    border-radius:999px;
+
+    background:
+        rgba(255,177,73,.18);
+
+    border:
+        1px solid rgba(255,210,130,.35);
+
+    font-weight:700;
+}
+
+.pickup{
+
+    font-size:.98rem;
+
+    opacity:.95;
+}
+
+/* =========================
+   FRASE
+========================= */
+
+.flirty{
+
+    font-size:.92rem;
+
+    font-style:italic;
+
+    opacity:.85;
+
+    margin-top:8px;
+
+    line-height:1.4;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:65px;
+
+    margin-top:18px;
+}
+
 button{
- border:0;border-radius:16px;padding:15px 24px;font-size:1.05rem;font-weight:800;
- cursor:pointer;transition:transform .28s ease,opacity .28s ease,filter .28s ease;
- touch-action:manipulation;
+
+    border:0;
+
+    border-radius:16px;
+
+    padding:15px 25px;
+
+    font-size:1.05rem;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:
+        transform .28s ease,
+        opacity .28s ease;
+
+    touch-action:manipulation;
 }
-#yes{background:#fff;color:#21131a;box-shadow:0 8px 25px rgba(0,0,0,.2)}
-#no{background:rgba(255,255,255,.14);color:white;border:1px solid rgba(255,255,255,.2)}
-#message{min-height:26px;font-size:.9rem;opacity:.75;margin-top:15px}
-.hidden{display:none!important}
-.success h1{font-size:2.5rem}
-.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:5}
-.confetti i{position:absolute;top:-20px;width:8px;height:14px;background:white;
-animation:fall 2.8s linear forwards;opacity:.9}
-.small{font-size:.92rem;opacity:.75;margin-top:15px}
-@keyframes pulse{50%{transform:scale(1.15);opacity:.65}}
-@keyframes fall{to{transform:translateY(110dvh) rotate(720deg);opacity:0}}
-@media(max-width:420px){.card{padding:28px 19px}.buttons{gap:8px}button{padding:14px 18px}}
+
+#yes{
+
+    background:#fff;
+
+    color:#21131a;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.25);
+}
+
+#no{
+
+    background:
+        rgba(255,255,255,.13);
+
+    color:white;
+
+    border:
+        1px solid rgba(255,255,255,.25);
+}
+
+#message{
+
+    min-height:45px;
+
+    font-size:.9rem;
+
+    opacity:.82;
+
+    margin-top:15px;
+
+    line-height:1.4;
+}
+
+/* =========================
+   ÉXITO
+========================= */
+
+.success h1{
+
+    font-size:
+        clamp(2rem,8vw,2.8rem);
+}
+
+/* =========================
+   GATITOS
+========================= */
+
+.cats{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:10;
+}
+
+.cat{
+
+    position:absolute;
+
+    top:-80px;
+
+    font-size:
+        clamp(28px,7vw,48px);
+
+    animation:
+        catFall linear forwards;
+
+    user-select:none;
+}
+
+@keyframes catFall{
+
+    0%{
+
+        transform:
+            translateY(-100px)
+            rotate(0deg)
+            scale(.8);
+
+        opacity:0;
+    }
+
+    10%{
+
+        opacity:1;
+    }
+
+    50%{
+
+        transform:
+            translateY(50vh)
+            rotate(180deg)
+            scale(1);
+    }
+
+    100%{
+
+        transform:
+            translateY(115vh)
+            rotate(400deg)
+            scale(.9);
+
+        opacity:0;
+    }
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes pulse{
+
+    50%{
+
+        transform:scale(1.15);
+
+        opacity:.65;
+    }
+}
+
+/* =========================
+   CELULARES
+========================= */
+
+@media(max-width:420px){
+
+    .card{
+
+        width:90%;
+
+        padding:
+            27px 18px;
+    }
+
+    h1{
+
+        font-size:2.15rem;
+    }
+
+    button{
+
+        padding:
+            14px 20px;
+    }
+
+    .flirty{
+
+        font-size:.86rem;
+    }
+}
+
 </style>
 </head>
+
 <body>
+
 <div class="scene">
-  <div class="sun-glow"></div>
-  <div class="card" id="card">
-    <div class="kicker">Para Valeria, alias: Cachetes 👀</div>
-    <h1>¿Vamos a ver el atardecer?</h1>
-    <p>Mañana. Tú y yo.</p>
-    <div class="time">🌅 4:00 PM</div>
-    <div class="buttons">
-      <button id="yes">Sí</button>
-      <button id="no">No 👀</button>
+
+    <div class="sun-glow"></div>
+
+    <div class="card" id="card">
+
+        <!-- NOMBRE -->
+
+        <div class="kicker">
+            Para Valeria, alias: Cachetes 👀
+        </div>
+
+
+        <!-- PREGUNTA -->
+
+        <h1>
+            ¿Vamos a ver el atardecer?
+        </h1>
+
+
+        <p>
+            Mañana. Tú y yo.
+        </p>
+
+
+        <!-- INFORMACIÓN -->
+
+        <div class="info">
+
+            <div class="time">
+                🌅 Mañana a las 4:00 PM
+            </div>
+
+            <div class="pickup">
+                📍 Paso por ti
+            </div>
+
+            <div class="flirty">
+                no se ponga tan guapa,
+                que luego deja en vergüenza el atardecer 😌
+            </div>
+
+        </div>
+
+
+        <!-- BOTONES -->
+
+        <div class="buttons">
+
+            <button id="yes">
+                Sí
+            </button>
+
+            <button id="no">
+                No
+            </button>
+
+        </div>
+
+
+        <!-- MENSAJE DEL NO -->
+
+        <div id="message"></div>
+
     </div>
-    <div id="message"></div>
-  </div>
-  <div class="confetti" id="confetti"></div>
+
+
+    <!-- AQUÍ CAERÁN LOS GATITOS -->
+
+    <div class="cats" id="cats"></div>
+
 </div>
 
-<script>
-const yes=document.getElementById('yes');
-const no=document.getElementById('no');
-const msg=document.getElementById('message');
-const card=document.getElementById('card');
-let noClicks=0;
 
-const texts=[
-  "¿Segura? 👀",
-  "Piénselo otra vez jajaja",
-  "No lee creo 😌",
-  "Última oportunidad...",
-  "Ese botón ya se está rindiendo 😂"
+<script>
+
+/* ==================================
+   VARIABLES
+================================== */
+
+const yes =
+    document.getElementById("yes");
+
+const no =
+    document.getElementById("no");
+
+const message =
+    document.getElementById("message");
+
+const card =
+    document.getElementById("card");
+
+const cats =
+    document.getElementById("cats");
+
+
+let noClicks = 0;
+
+
+/* ==================================
+   MENSAJES DEL BOTÓN NO
+================================== */
+
+const messages = [
+
+    "¿Segura? 👀",
+
+    "Piénsalo otra vez jajaja",
+
+    "No te creo 😂",
+
+    "¿De verdad no? 👀",
+
+    "Bueno... creo que el universo y las buenas vibras quiere que digas que sí, ni modo 😂"
+
 ];
 
-no.addEventListener('click',()=>{
-  noClicks++;
-  const scale=Math.max(.08,1-noClicks*.17);
-  no.style.transform=`scale(${scale})`;
-  yes.style.transform=`scale(${1+Math.min(noClicks*.06,.35)})`;
-  msg.textContent=texts[Math.min(noClicks-1,texts.length-1)];
-  if(noClicks>=5){
-    no.style.opacity="0.15";
-    no.style.pointerEvents="none";
-    msg.textContent="Bueno... creo que el universo y las buenas vibras quiere que digas que sí, ni modo 😂";
-  }
-});
 
-yes.addEventListener('click',()=>{
-  document.querySelector('.buttons').classList.add('hidden');
-  card.classList.add('success');
-  card.querySelector('.kicker').textContent="Plan confirmado ✅";
-  card.querySelector('h1').textContent="Entonces nos vemos mañana";
-  card.querySelector('p').textContent="Mañana a las 4:00 PM. Paso por ti.";
-  card.querySelector('.time').textContent="🌅 Mañana · 4:00 PM · Paso por ti, no se ponga tan guapa, que luego deja en erguenza el atardecer";
-  msg.textContent="";
-  for(let i=0;i<55;i++){
-    const el=document.createElement('i');
-    el.style.left=Math.random()*100+'%';
-    el.style.animationDelay=(Math.random()*1.1)+'s';
-    el.style.transform=`rotate(${Math.random()*360}deg)`;
-    document.getElementById('confetti').appendChild(el);
-  }
-});
+/* ==================================
+   BOTÓN NO
+================================== */
+
+no.addEventListener(
+    "click",
+    () => {
+
+        noClicks++;
+
+
+        /*
+        Cada vez que presiona NO
+        se hace más pequeño.
+        */
+
+        const scale =
+            Math.max(
+                0.08,
+                1 - noClicks * 0.17
+            );
+
+
+        no.style.transform =
+            `scale(${scale})`;
+
+
+        /*
+        El botón SI va creciendo
+        poquito a poquito.
+        */
+
+        yes.style.transform =
+            `scale(${1 + Math.min(
+                noClicks * .06,
+                .35
+            )})`;
+
+
+        /*
+        Cambiar mensaje
+        */
+
+        message.textContent =
+            messages[
+                Math.min(
+                    noClicks - 1,
+                    messages.length - 1
+                )
+            ];
+
+
+        /*
+        Después de varios NO
+        desaparece casi completamente.
+        */
+
+        if(noClicks >= 5){
+
+            no.style.opacity =
+                "0.12";
+
+            no.style.pointerEvents =
+                "none";
+
+            message.textContent =
+                "Bueno... creo que el universo y las buenas vibras quiere que digas que sí, ni modo 😂";
+        }
+
+    }
+);
+
+
+/* ==================================
+   BOTÓN SI
+================================== */
+
+yes.addEventListener(
+    "click",
+    () => {
+
+        /*
+        Ocultar botones
+        */
+
+        document
+            .querySelector(".buttons")
+            .classList
+            .add("hidden");
+
+
+        /*
+        Cambiar contenido
+        */
+
+        card.classList.add("success");
+
+
+        card
+            .querySelector(".kicker")
+            .textContent =
+            "Plan confirmado 👀";
+
+
+        card
+            .querySelector("h1")
+            .textContent =
+            "Entonces nos vemos mañana 😌";
+
+
+        card
+            .querySelector("p")
+            .textContent =
+            "Buena decisión.";
+
+
+        card
+            .querySelector(".time")
+            .textContent =
+            "🌅 Mañana a las 4:00 PM";
+
+
+        card
+            .querySelector(".pickup")
+            .textContent =
+            "📍 Paso por ti";
+
+
+        card
+            .querySelector(".flirty")
+            .textContent =
+            "No te pongas tan guapa, que luego dejas en vergüenza el atardecer 😌";
+
+
+        message.textContent =
+            "";
+
+
+        /*
+        EMPIEZAN A CAER GATITOS 🐱
+        */
+
+        createCats();
+
+    }
+);
+
+
+/* ==================================
+   CREAR GATITOS
+================================== */
+
+function createCats(){
+
+    /*
+    Creamos 45 gatitos.
+    */
+
+    for(
+        let i = 0;
+        i < 45;
+        i++
+    ){
+
+        const cat =
+            document.createElement("div");
+
+
+        cat.className =
+            "cat";
+
+
+        /*
+        Diferentes gatitos
+        */
+
+        const catTypes = [
+
+            "🐱",
+
+            "🐈",
+
+            "😺",
+
+            "😸",
+
+            "😹"
+
+        ];
+
+
+        cat.textContent =
+            catTypes[
+                Math.floor(
+                    Math.random() *
+                    catTypes.length
+                )
+            ];
+
+
+        /*
+        Posición horizontal
+        */
+
+        cat.style.left =
+            Math.random() * 100 + "%";
+
+
+        /*
+        Tamaño aleatorio
+        */
+
+        const size =
+            25 +
+            Math.random() * 25;
+
+
+        cat.style.fontSize =
+            size + "px";
+
+
+        /*
+        Duración aleatoria
+        */
+
+        const duration =
+            2.5 +
+            Math.random() * 3;
+
+
+        cat.style.animationDuration =
+            duration + "s";
+
+
+        /*
+        Retraso aleatorio
+        */
+
+        cat.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+
+        /*
+        Agregar a la pantalla
+        */
+
+        cats.appendChild(cat);
+
+
+        /*
+        Eliminar después de caer
+        */
+
+        setTimeout(
+            () => {
+
+                cat.remove();
+
+            },
+            6000
+        );
+
+    }
+
+}
+
 </script>
+
 </body>
 </html>
